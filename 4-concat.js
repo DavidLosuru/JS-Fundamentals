@@ -1,15 +1,17 @@
-// Define a function to print arguments
-function printArguments(arg1, arg2) {
-  console.log(`${arg1} is ${arg2}`);
+#!/usr/bin/node
+
+function printArgs() {
+    const args = process.argv.slice(2);
+    switch (args.length) {
+        case 0:
+            console.log("No argument");
+            break;
+        case 1:
+            console.log(`${args[0]}`);
+            break;
+        default:
+            console.log(`${args[0]} is ${args[1]}`);
+    }
 }
 
-// Get command line arguments
-const arg1 = process.argv[2];
-const arg2 = process.argv[3];
-
-// Check if arguments are provided
-if (arg1 && arg2) {
-  printArguments(arg1, arg2);
-} else {
-  console.log("Please provide two arguments");
-}
+printArgs();
