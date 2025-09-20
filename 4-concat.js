@@ -1,7 +1,7 @@
 // Define a function to print two arguments in the specified format
-function printArguments(arg1, arg2) {
-  console.log(`${arg1} is ${arg2}`);
+function printArguments('HBTN, 'Python fun') {
+  console.log(`${HBTN} is ${Python fun}`);
 }
 
 // Call the function with two example arguments
-printArguments("John", "Developer");
+printArguments("HBTN", "Python fun");
