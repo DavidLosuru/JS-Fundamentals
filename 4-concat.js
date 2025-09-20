@@ -1,13 +1,17 @@
 #!/usr/bin/node
 
-function printArguments(argv) {
-    if (argv.length === 2) {
-        console.log();
-    } else if (argv.length === 3) {
-        console.log(argv[2]);
-    } else if (argv.length > 3) {
-        console.log(`${argv[2]} ${argv[3]}`);
+function printArgs() {
+    const args = process.argv.slice(2);
+    switch (args.length) {
+        case 0:
+            console.log("No argument");
+            break;
+        case 1:
+            console.log(`${args[0]}`);
+            break;
+        default:
+            console.log(`${args[0]} is ${args[1]}`);
     }
 }
 
-printArguments(process.argv);
+printArgs();
