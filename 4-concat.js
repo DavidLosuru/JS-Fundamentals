@@ -1,7 +1,15 @@
-// Define a function to print two arguments in the specified format
-function printArguments('HBTN, 'Python fun') {
-  console.log(`${HBTN} is ${Python fun}`);
+// Define a function to print arguments
+function printArguments(arg1, arg2) {
+  console.log(`${arg1} is ${arg2}`);
 }
 
-// Call the function with two example arguments
-printArguments("HBTN", "Python fun");
+// Get command line arguments
+const arg1 = process.argv[2];
+const arg2 = process.argv[3];
+
+// Check if arguments are provided
+if (arg1 && arg2) {
+  printArguments(arg1, arg2);
+} else {
+  console.log("Please provide two arguments");
+}
