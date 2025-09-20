@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
-function printArguments(args) {
-    if (args.length === 2) {
-        console.log(`${args[0]} ${args[1]}`);
-    } else if (args.length === 1) {
-        console.log("HBTN");
-    } else {
-        console.log("");
+function printArguments(argv) {
+    if (argv.length === 2) {
+        console.log();
+    } else if (argv.length === 3) {
+        console.log(argv[2]);
+    } else if (argv.length > 3) {
+        console.log(`${argv[2]} ${argv[3]}`);
     }
 }
 
-printArguments(process.argv.slice(2));
+printArguments(process.argv);
