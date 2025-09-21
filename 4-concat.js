@@ -1,13 +1,10 @@
 #!/usr/bin/node
 
 function printArgs() {
-  const args = process.argv.slice(2);
-  if (args.length === 2) {
-    console.log(`${args[0]} is ${args[1]}`);
-  } else if (args.length === 1) {
-    console.log(`${args[0]}`);
-  } else {
-    console.log();
+  if (process.argv.length === 3) {
+    console.log(`${process.argv[2]} is undefined`);
+  } else if (process.argv.length > 3) {
+    console.log(`${process.argv[2]} is ${process.argv[3]}`);
   }
 }
 
