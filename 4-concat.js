@@ -1,13 +1,14 @@
 #!/usr/bin/node
 
-function printArguments() {
-    if (process.argv.length >= 4) {
-        console.log(`'${process.argv[2]}'`, `'${process.argv[3]}'`);
-    } else if (process.argv.length === 3) {
-        console.log(`'${process.argv[2]}'`);
-    } else {
-        // No output
-    }
+function printArgs() {
+  const args = process.argv.slice(2);
+  if (args.length === 2) {
+    console.log(`${args[0]} is ${args[1]}`);
+  } else if (args.length === 1) {
+    console.log(`${args[0]}`);
+  } else {
+    console.log();
+  }
 }
 
-printArguments();
+printArgs();
