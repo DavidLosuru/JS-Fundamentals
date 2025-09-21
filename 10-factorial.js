@@ -1,22 +1,26 @@
-function factorial(n = NaN) {
-  const num = parseInt(n);
-  if (isNaN(num)) return 1;
-  if (num < 0) {
-    console.log("Factorial is not defined for negative numbers.");
-    return;
-  }
-  if (num === 0 || num === 1) return 1;
-  return num * factorial(num - 1);
+// Function to calculate factorial recursively
+function factorial(n) {
+    // Base case: factorial of 0 or 1 is 1
+    if (isNaN(n) || n <= 1) {
+        return 1;
+    }
+    // Recursive case: n! = n * (n-1)!
+    return n * factorial(n - 1);
 }
 
-function main() {
-  const args = process.argv.slice(2);
-  if (args.length === 0) {
-    console.log("No argument");
-    return;
-  }
-  const result = factorial(args[0]);
-  if (result !== undefined) console.log(`Factorial ${args[0]} = ${result}`);
+// Function to get and validate input
+function computeFactorial() {
+    // Get the first command-line argument
+    const num = parseInt(process.argv[2]);
+
+    if (isNaN(num)) {
+        console.log("No argument or invalid argument. Factorial of NaN is 1.");
+        return;
+    }
+
+    const result = factorial(num);
+    console.log(`Factorial ${num} = ${result}`);
 }
 
-main();
+// Call the function to compute factorial
+computeFactorial();
