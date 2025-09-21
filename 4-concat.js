@@ -1,14 +1,11 @@
 #!/usr/bin/node
 
-function printArguments() {
-    const args = process.argv.slice(2);
-    if (args.length === 0) {
-        console.log("0 argument.");
-    } else if (args.length === 1) {
-        console.log(args[0]);
-    } else if (args.length >= 2) {
-        console.log(`${args[0]} is ${args[1]}`);
-    }
+function printArgs() {
+  if (process.argv.length === 3) {
+    console.log(`${process.argv[2]} is undefined`);
+  } else if (process.argv.length > 3) {
+    console.log(`${process.argv[2]} is ${process.argv[3]}`);
+  }
 }
 
-printArguments();
+printArgs();
